@@ -1771,9 +1771,10 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 8
+  groundCheck: {fileID: 1360652787}
+  groundCheckDistance: 0.67
   moveSpeed: 8
   jumpForce: 12
-  groundCheckDistance: 0.67
   dashSpeed: 25
   dashDuration: 0.25
   dashTime: 0

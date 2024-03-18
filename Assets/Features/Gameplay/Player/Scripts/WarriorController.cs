@@ -5,24 +5,22 @@ using Unity.VisualScripting;
 using UnityEditor.Tilemaps;
 using UnityEngine;
 
-public class WarriorController : MonoBehaviour
+public class WarriorController : Entity
 {
 
     private float XInput;
 
 
-    #region [========== Components ==========]
-    [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private Animator animator;
-    [SerializeField] private SpriteRenderer spriteRenderer;
-    [SerializeField] private LayerMask groundMask;
-    #endregion
+    //#region [========== Components ==========]
+    //[SerializeField] private Rigidbody2D rb;
+    //[SerializeField] private Animator animator;
+    //[SerializeField] private SpriteRenderer spriteRenderer;
+    //[SerializeField] private LayerMask groundMask;
+    //#endregion
 
     #region [=========== variables ============]
     [SerializeField] private float moveSpeed;
     [SerializeField] private float jumpForce;
-    [SerializeField] private float groundCheckDistance;
-    private bool isGrounded = true;
 
     [Header("Dash Info")]
     [SerializeField] private float dashSpeed;
@@ -38,18 +36,14 @@ public class WarriorController : MonoBehaviour
     #endregion
 
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
-
+        base.Update();
         Movement();
         XInput = Input.GetAxisRaw("Horizontal");
-        CollisionChecks();
+  
 
         dashTime -= Time.deltaTime;
         comboTimeWindow -= Time.deltaTime;
@@ -92,10 +86,6 @@ public class WarriorController : MonoBehaviour
         comboTimeWindow = comboTime;
     }
 
-    private void CollisionChecks()
-    {
-        isGrounded = Physics2D.Raycast(transform.position, Vector2.down, groundCheckDistance, groundMask);
-    }
 
     private void Jump()
     {
@@ -118,14 +108,10 @@ public class WarriorController : MonoBehaviour
         }
         
         animator.SetBool("isMoving", rb.velocity.x != 0);
-        spriteRenderer.flipX = rb.velocity.x < 0;
+        Flip();
 
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawLine(transform.position, new Vector2(transform.position.x, transform.position.y - groundCheckDistance));        
-    }
 
     #region [========== Animation Events =============]
     public void AttackOver()
