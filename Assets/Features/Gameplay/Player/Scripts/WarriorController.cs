@@ -22,7 +22,7 @@ public class WarriorController : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private float jumpForce;
     [SerializeField] private float groundCheckDistance;
-    private bool isGrounded;
+    private bool isGrounded = true;
     #endregion
 
     // Start is called before the first frame update
@@ -69,6 +69,11 @@ public class WarriorController : MonoBehaviour
         animator.SetBool("isMoving", rb.velocity.x != 0);
         spriteRenderer.flipX = rb.velocity.x < 0;
 
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawLine(transform.position, new Vector2(transform.position.x, transform.position.y - groundCheckDistance));        
     }
 
 }
