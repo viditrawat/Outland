@@ -1777,6 +1777,7 @@ MonoBehaviour:
   dashSpeed: 25
   dashDuration: 0.25
   dashTime: 0
+  comboTime: 1
 --- !u!70 &793955970
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2263,6 +2264,7 @@ GameObject:
   - component: {fileID: 997113955}
   - component: {fileID: 997113956}
   - component: {fileID: 997113957}
+  - component: {fileID: 997113958}
   m_Layer: 0
   m_Name: root
   m_TagString: Untagged
@@ -2363,6 +2365,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &997113958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997113954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0ab4c024b4347842b32392a16874892, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  warriorController: {fileID: 793955969}
 --- !u!1 &999514143
 GameObject:
   m_ObjectHideFlags: 0
