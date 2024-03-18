@@ -1742,7 +1742,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 3.5
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: fe69e3f6c7edc864486f7650a781220b, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1806,7 +1806,7 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0045449734, y: 0.4}
+  m_Offset: {x: -0.0045449734, y: 0.58}
   m_Size: {x: 0.8288903, y: 2.198204}
   m_Direction: 0
 --- !u!210 &793955971
