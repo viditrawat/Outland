@@ -1774,6 +1774,9 @@ MonoBehaviour:
   moveSpeed: 8
   jumpForce: 12
   groundCheckDistance: 0.67
+  dashSpeed: 25
+  dashDuration: 0.25
+  dashTime: 0
 --- !u!70 &793955970
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
