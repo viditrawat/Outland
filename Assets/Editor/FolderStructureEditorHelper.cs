@@ -10,19 +10,25 @@ public class FolderStructureEditorHelper : EditorWindow
     [MenuItem("Window/Outland/FolderStructure/Gameplay")]
     public static void showWindow()
     {
-        GetWindow<FolderStructureEditorHelper>("Gameplay");
+        GetWindow<FolderStructureEditorHelper>("FolderStructure");
     }
 
     void OnGUI()
     {
         name = EditorGUILayout.TextField("Folder Name", name);
-        if(GUILayout.Button("Create"))
+        if(GUILayout.Button("Create Gameplay folder"))
         {
             CreateFeatureFolders(name);
         }
+
+        if(GUILayout.Button("Create UI folder"))
+        {
+            string path = "Assets/Features/UI";
+            CreateFeatureFolders(name, path);
+        }
     }
 
-    private static void CreateFeatureFolders(string folderName)
+    private static void CreateFeatureFolders(string folderName, string path = null)
     {
         List<string> folders = new List<string>()
             {
@@ -36,14 +42,15 @@ public class FolderStructureEditorHelper : EditorWindow
                 "VFX",
             };
 
-        CreateFolders(folders, folderName);
+        CreateFolders(folders, folderName, path);
     }
 
-    private static void CreateFolders(List<string> folders, string folderName)
+    private static void CreateFolders(List<string> folders, string folderName, string path = null)
     {
 
+        if(path == null)
+            path = "Assets/Features/Gameplay";
 
-        string path = "Assets/Features/Gameplay";
         AssetDatabase.CreateFolder(path, folderName);
         path = path + "/" + folderName;
 
