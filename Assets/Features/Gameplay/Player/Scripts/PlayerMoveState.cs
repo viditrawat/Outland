@@ -23,6 +23,7 @@ public class PlayerMoveState : PlayerGroundedState
         base.Update();
 
         playerController.SetVelocity(xInput * playerController.moveSpeed, rb.velocity.y);
+
         if (xInput == 0)
         {
             stateMachine.ChangeState(playerController.idleState);

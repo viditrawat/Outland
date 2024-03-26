@@ -30,11 +30,14 @@ public class PlayerAirState : PlayerState
            
 
         if (playerController.IsGroundDetected())
+        {
             stateMachine.ChangeState(playerController.idleState);
+        }
+            
     
         if(xInput !=0 )
         {
-            playerController.SetVelocity(playerController.moveSpeed * 0.8f * xInput * xInput, rb.velocity.y);
+            playerController.SetVelocity(playerController.moveSpeed * 0.8f * xInput, rb.velocity.y);
         }
     }
 }

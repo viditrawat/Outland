@@ -293,8 +293,8 @@ Transform:
   m_GameObject: {fileID: 817540772}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0254, y: -3.0625, z: 0.2390203}
-  m_LocalScale: {x: 17.828297, y: 3.8608553, z: 1}
+  m_LocalPosition: {x: 22.9715, y: -3.5142, z: 0.2390203}
+  m_LocalScale: {x: 63.821735, y: 4.7642956, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -344,7 +344,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!1 &1078321937
+--- !u!1 &1574389391
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -352,10 +352,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1078321941}
-  - component: {fileID: 1078321940}
-  - component: {fileID: 1078321939}
-  - component: {fileID: 1078321938}
+  - component: {fileID: 1574389395}
+  - component: {fileID: 1574389394}
+  - component: {fileID: 1574389393}
+  - component: {fileID: 1574389392}
   m_Layer: 3
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -363,13 +363,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!61 &1078321938
+--- !u!61 &1574389392
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1078321937}
+  m_GameObject: {fileID: 1574389391}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -408,13 +408,13 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!23 &1078321939
+--- !u!23 &1574389393
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1078321937}
+  m_GameObject: {fileID: 1574389391}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -450,25 +450,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1078321940
+--- !u!33 &1574389394
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1078321937}
+  m_GameObject: {fileID: 1574389391}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1078321941
+--- !u!4 &1574389395
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1078321937}
+  m_GameObject: {fileID: 1574389391}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.4177, y: 0.2847, z: 0.2390203}
-  m_LocalScale: {x: 4.942004, y: 4.630324, z: 1}
+  m_LocalPosition: {x: 6.7, y: 3.4, z: 0.2390203}
+  m_LocalScale: {x: 0.5988266, y: 8.458207, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -521,9 +521,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5931155127555062217, guid: ed1e24463e9605d42a659374ffeff592, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.071
+      objectReference: {fileID: 0}
     - target: {fileID: 6295684392518699881, guid: ed1e24463e9605d42a659374ffeff592, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6373347266872079094, guid: ed1e24463e9605d42a659374ffeff592, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6373347266872079094, guid: ed1e24463e9605d42a659374ffeff592, type: 3}
+      propertyPath: m_Interpolate
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6373347266872079094, guid: ed1e24463e9605d42a659374ffeff592, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6927931599210226085, guid: ed1e24463e9605d42a659374ffeff592, type: 3}
+      propertyPath: wallCheckDistance
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -536,5 +556,5 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 817540776}
-  - {fileID: 1078321941}
+  - {fileID: 1574389395}
   - {fileID: 1912648025}

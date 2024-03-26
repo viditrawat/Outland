@@ -102,6 +102,7 @@ public class PlayerController : MonoBehaviour
 
     public void SetVelocity(float _xVelocity, float _yVelocity)
     {
+
         rb.velocity = new Vector2(_xVelocity, _yVelocity);
         FlipController(_xVelocity);
     }
