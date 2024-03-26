@@ -108,8 +108,16 @@ public class WarriorController : Entity
         }
         
         animator.SetBool("isMoving", rb.velocity.x != 0);
-        Flip();
+        FlipController();
 
+    }
+
+    private void FlipController()
+    {
+        if (rb.velocity.x > 0 && !facingRight)
+            Flip();
+        else if (rb.velocity.x < 0 && facingRight)
+            Flip();
     }
 
 
