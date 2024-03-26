@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
     public PlayerDashState dashState { get; private set; }
 
     public PlayerWallJumpState wallJump { get; private set; }
+    public PlayerPrimaryAttack primaryAttack { get; private set; }
 
 
     #endregion
@@ -70,6 +71,8 @@ public class PlayerController : MonoBehaviour
         dashState = new PlayerDashState(this, stateMachine, "Dash");
         wallSlideState = new PlayerWallSlideState(this, stateMachine, "WallSlide");
         wallJump = new PlayerWallJumpState(this, stateMachine, "Jump");
+
+        primaryAttack = new PlayerPrimaryAttack(this, stateMachine, "Attack");
     }
 
     private void Start()
@@ -104,6 +107,8 @@ public class PlayerController : MonoBehaviour
         }
         
     }
+
+    public void Animationtrigger() => stateMachine.currentState.AnimationFinishtrigger();
 
     public void SetVelocity(float _xVelocity, float _yVelocity)
     {

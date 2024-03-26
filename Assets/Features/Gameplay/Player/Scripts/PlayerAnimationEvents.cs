@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerAnimationEvents : MonoBehaviour
 {
-    [SerializeField] private WarriorController warriorController;
+    [SerializeField] private PlayerController playerController;
 
 
     public void AnimationTrigger()
     {
-        warriorController.AttackOver();
+        playerController.Animationtrigger();
     }
 }
