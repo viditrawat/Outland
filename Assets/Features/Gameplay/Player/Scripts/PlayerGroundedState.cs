@@ -23,6 +23,10 @@ public class PlayerGroundedState : PlayerState
     public override void Update()
     {
         base.Update();
+
+        if (!playerController.IsGroundDetected())
+            stateMachine.ChangeState(playerController.airState);
+
         if (Input.GetKeyDown(KeyCode.Space) && playerController.IsGroundDetected())
             stateMachine.ChangeState(playerController.jumpState);
     }
