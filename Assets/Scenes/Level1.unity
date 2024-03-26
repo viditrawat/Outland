@@ -1765,20 +1765,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 692a4238e057a664a8dacdf51c14e04c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 793955968}
-  animator: {fileID: 997113957}
-  spriteRenderer: {fileID: 997113956}
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 8
-  groundCheck: {fileID: 1360652787}
-  groundCheckDistance: 0.67
   moveSpeed: 8
-  jumpForce: 12
-  dashSpeed: 25
-  dashDuration: 0.25
-  dashTime: 0
-  comboTime: 1
+  jumpFoce: 20
 --- !u!70 &793955970
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2355,7 +2343,7 @@ Animator:
   m_GameObject: {fileID: 997113954}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0a7823392c4d49e47a02e4340c918654, type: 2}
+  m_Controller: {fileID: 9100000, guid: 53de9ecfed3fca9409ce242b8e64ab35, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2378,7 +2366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0ab4c024b4347842b32392a16874892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  warriorController: {fileID: 793955969}
+  warriorController: {fileID: 0}
 --- !u!1 &999514143
 GameObject:
   m_ObjectHideFlags: 0
