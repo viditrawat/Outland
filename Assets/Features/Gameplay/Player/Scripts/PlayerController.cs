@@ -8,6 +8,12 @@ using UnityEngine.TextCore;
 
 public class PlayerController : MonoBehaviour
 {
+    #region [ ============ Attack Variables ==========]
+    [Header("Attack Details")]
+    public Vector2[] attackMovement;
+    public bool isBusy {  get; private set; }
+
+    #endregion
     #region[ ========== Movement Variables ============]
     [Header("Move Info")]
     public float moveSpeed = 12f;
@@ -23,7 +29,7 @@ public class PlayerController : MonoBehaviour
 
     #endregion
 
-    #region [ ========= Collision =========]
+    #region [ ========= Collision Variables =========]
 
     [Header("Collision Info")]
     [SerializeField] private Transform groundCheck;
@@ -44,7 +50,7 @@ public class PlayerController : MonoBehaviour
     public PlayerDashState dashState { get; private set; }
 
     public PlayerWallJumpState wallJump { get; private set; }
-    public PlayerPrimaryAttack primaryAttack { get; private set; }
+    public PlayerPrimaryAttackState primaryAttack { get; private set; }
 
 
     #endregion
@@ -60,6 +66,7 @@ public class PlayerController : MonoBehaviour
     public bool IsWalldetected() => Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, wallCheckDistance, groundLayer) && !IsGroundDetected();
     #endregion
 
+    #region [ ========== Init ===========]
     private void Awake()
     {
         stateMachine = new PlayerStateMachine();
@@ -72,7 +79,7 @@ public class PlayerController : MonoBehaviour
         wallSlideState = new PlayerWallSlideState(this, stateMachine, "WallSlide");
         wallJump = new PlayerWallJumpState(this, stateMachine, "Jump");
 
-        primaryAttack = new PlayerPrimaryAttack(this, stateMachine, "Attack");
+        primaryAttack = new PlayerPrimaryAttackState(this, stateMachine, "Attack");
     }
 
     private void Start()
@@ -82,11 +89,16 @@ public class PlayerController : MonoBehaviour
         stateMachine.Init(idleState);
     }
 
+    #endregion
+
+    
+
     private void Update()
     {
         stateMachine.currentState.Update();
 
         CheckForDashInput();
+
     }
 
     private void CheckForDashInput()
@@ -110,12 +122,31 @@ public class PlayerController : MonoBehaviour
 
     public void Animationtrigger() => stateMachine.currentState.AnimationFinishtrigger();
 
+
+
+    #region [====== Couroutines ========]
+
+    public IEnumerator BusyFor(float _sec)
+    {
+        isBusy = true;
+        yield return new WaitForSeconds(_sec);
+
+        isBusy = false;
+    }
+
+    #endregion
+
+    #region [ ========= velocity ==========]
+    public void ZeroVelocity()
+    {
+        rb.velocity = new Vector2 (0, 0);
+    }
     public void SetVelocity(float _xVelocity, float _yVelocity)
     {
-
         rb.velocity = new Vector2(_xVelocity, _yVelocity);
         FlipController(_xVelocity);
     }
+    #endregion
 
     #region [======= Flips ========]
 
