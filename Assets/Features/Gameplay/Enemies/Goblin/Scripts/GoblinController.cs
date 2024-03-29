@@ -10,6 +10,9 @@ public class GoblinController : EnemyBase
     
     public GoblinIdleState idleState { get; private set; }
     public GoblinMoveState moveState { get; private set; }
+
+    public GoblinBattleState battleState { get; private set; }
+    public GoblinAttackState attackState { get; private set; }
     
     #endregion
     protected override void Awake()
@@ -17,7 +20,8 @@ public class GoblinController : EnemyBase
         base.Awake();
         idleState = new GoblinIdleState(this, stateMachine, "Idle", this);
         moveState = new GoblinMoveState(this, stateMachine, "Run", this);
-
+        battleState = new GoblinBattleState(this, stateMachine, "Run", this);
+        attackState = new GoblinAttackState(this, stateMachine, "Attack", this);
     }
 
     protected override void Start()
