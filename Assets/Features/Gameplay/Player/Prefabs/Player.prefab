@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1948500762757934088}
   - component: {fileID: 5536605453097730361}
   - component: {fileID: 404124454455997019}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WallSensor_L1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 5118666911963339496}
   - component: {fileID: 383337080983551522}
   - component: {fileID: 4829668276554053287}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GroundSensor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ GameObject:
   - component: {fileID: 1345040105399026}
   - component: {fileID: 1571083888261749157}
   - component: {fileID: 6248408416215830799}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -296,7 +296,7 @@ GameObject:
   - component: {fileID: 1545500214778358718}
   - component: {fileID: 4825454703866336111}
   - component: {fileID: 2270025768895980221}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WallSensor_R2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -376,7 +376,7 @@ GameObject:
   - component: {fileID: 2457576652517624259}
   - component: {fileID: 2508028057215496196}
   - component: {fileID: 2840909125099351987}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WallSensor_L2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -458,7 +458,7 @@ GameObject:
   - component: {fileID: 6577924744546865924}
   - component: {fileID: 6927931599210226085}
   - component: {fileID: 9161838068001005629}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -555,6 +555,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 692a4238e057a664a8dacdf51c14e04c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  groundCheck: {fileID: 5118666911963339496}
+  groundCheckDistance: 0.15
+  wallCheck: {fileID: 5931155127555062217}
+  wallCheckDistance: 0.1
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
   attackMovement:
   - {x: 3, y: 1.5}
   - {x: 1, y: 2.5}
@@ -564,13 +571,6 @@ MonoBehaviour:
   dashCooldown: 1
   dashSpeed: 25
   dashDuration: 0.2
-  groundCheck: {fileID: 5118666911963339496}
-  groundCheckDistance: 0.15
-  wallCheck: {fileID: 5931155127555062217}
-  wallCheckDistance: 0.1
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 8
 --- !u!210 &9161838068001005629
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -594,7 +594,7 @@ GameObject:
   - component: {fileID: 5931155127555062217}
   - component: {fileID: 5186601131285716563}
   - component: {fileID: 7646446125771024134}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WallSensor_R1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

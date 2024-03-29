@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 5899707224348438644}
   - component: {fileID: 7376697817742938040}
   - component: {fileID: 7542954700277225877}
-  m_Layer: 0
+  - component: {fileID: 7010328346578010920}
+  m_Layer: 7
   m_Name: root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,6 +109,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7010328346578010920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858401136821447545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94807f027294f42418137bcc27cf822d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 8767333263748782644}
 --- !u!1 &989456541556126033
 GameObject:
   m_ObjectHideFlags: 0
@@ -118,7 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2240903622588771430}
   - component: {fileID: 517104224462016256}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WallcheckSensor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +148,7 @@ Transform:
   m_GameObject: {fileID: 989456541556126033}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.55, y: -0.23, z: 0}
+  m_LocalPosition: {x: 0.39, y: -0.64, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -188,7 +202,7 @@ GameObject:
   - component: {fileID: 2824951246352832510}
   - component: {fileID: 7642664214243145090}
   - component: {fileID: 8767333263748782644}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Goblin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -304,8 +318,15 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 64
   moveSpeed: 2
   idleTime: 0.5
+  battleTime: 4
+  attackDistance: 2
+  attackCooldown: 0.4
+  lastTimeAttacked: 0
 --- !u!1 &7859483298186824464
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,7 +337,7 @@ GameObject:
   m_Component:
   - component: {fileID: 685336081585387674}
   - component: {fileID: 15868168163862815}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GroundSensor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
