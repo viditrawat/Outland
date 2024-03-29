@@ -352,29 +352,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 685336081585387674, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.79
-      objectReference: {fileID: 0}
-    - target: {fileID: 2240903622588771430, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.55
-      objectReference: {fileID: 0}
-    - target: {fileID: 2240903622588771430, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.23
-      objectReference: {fileID: 0}
     - target: {fileID: 2566365854443443711, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
       propertyPath: m_Name
       value: Goblin
-      objectReference: {fileID: 0}
-    - target: {fileID: 5899707224348438644, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.41
-      objectReference: {fileID: 0}
-    - target: {fileID: 5899707224348438644, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.36
       objectReference: {fileID: 0}
     - target: {fileID: 7289748731485881530, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
       propertyPath: m_LocalPosition.x
@@ -416,54 +396,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7642664214243145090, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.14
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2566365854443443711, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1437342846}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
---- !u!1 &1437342843 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2566365854443443711, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
-  m_PrefabInstance: {fileID: 1437342842}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1437342844 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2240903622588771430, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
-  m_PrefabInstance: {fileID: 1437342842}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1437342845 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 685336081585387674, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
-  m_PrefabInstance: {fileID: 1437342842}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1437342846
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1437342843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df43e7524fa2f264084a6a352a521199, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  groundCheck: {fileID: 1437342845}
-  groundCheckDistance: 1.05
-  wallCheck: {fileID: 1437342844}
-  wallCheckDistance: 0.46
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  moveSpeed: 2
-  idleTime: 0.5
 --- !u!1 &1574389391
 GameObject:
   m_ObjectHideFlags: 0
