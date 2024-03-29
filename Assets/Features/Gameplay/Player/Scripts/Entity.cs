@@ -5,12 +5,6 @@ using UnityEngine;
 public class Entity : MonoBehaviour
 {
 
-
-    #region [========== Components ==========]
-    [SerializeField] protected SpriteRenderer spriteRenderer;
-    [SerializeField] protected LayerMask groundMask;
-    #endregion
-
     #region [=========== variables ============]
 
 
@@ -88,7 +82,7 @@ public class Entity : MonoBehaviour
 
     #region [======= Getters ========]
     public virtual bool IsGroundDetected() => Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, groundLayer);
-    public virtual bool IsWalldetected() => Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, wallCheckDistance, groundLayer) && !IsGroundDetected();
+    public virtual bool IsWalldetected() => Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, wallCheckDistance, groundLayer);
     #endregion
 
 

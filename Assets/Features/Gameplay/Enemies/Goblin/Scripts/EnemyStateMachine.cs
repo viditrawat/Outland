@@ -16,6 +16,7 @@ public class EnemyStateMachine
     {
         currentState.Exit();
         currentState = _newState;
+        Debug.Log("Enemy current state : " + currentState);
         currentState.Enter();
     }
 

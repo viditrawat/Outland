@@ -2,21 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public class EnemyBase : Entity
 {
-    public Rigidbody2D rb { get; private set; }
-
-    public Animator anim { get; private set; }
-
+    [Header("Move Info")]
+    public float moveSpeed = 2f;
+    public float idleTime = 1f;
     public EnemyStateMachine stateMachine { get; private set; }
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         stateMachine = new EnemyStateMachine();
     }
 
-    private void Update()
+    protected override void Update()
     {
+        base.Update();
         stateMachine.currentState.Update();
     }
 }

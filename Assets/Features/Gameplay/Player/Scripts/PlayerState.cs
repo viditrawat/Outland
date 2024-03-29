@@ -24,7 +24,6 @@ public class PlayerState
 
     public virtual void Enter()
     {
-        Debug.Log(animBoolName);
         playerController.anim.SetBool(animBoolName, true);
         rb = playerController.rb;
         triggerCalled = false;
@@ -35,7 +34,6 @@ public class PlayerState
         stateTimer -= Time.deltaTime;
         xInput = Input.GetAxisRaw("Horizontal");
         yInput = Input.GetAxisRaw("Vertical");
-        Debug.Log(xInput);
 
         playerController.anim.SetFloat("yVelocity", rb.velocity.y);
     }
