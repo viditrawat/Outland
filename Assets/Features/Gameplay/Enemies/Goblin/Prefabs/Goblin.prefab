@@ -234,6 +234,7 @@ GameObject:
   - component: {fileID: 2824951246352832510}
   - component: {fileID: 7642664214243145090}
   - component: {fileID: 8767333263748782644}
+  - component: {fileID: 1108330581646998847}
   m_Layer: 7
   m_Name: Goblin
   m_TagString: Untagged
@@ -361,6 +362,20 @@ MonoBehaviour:
   attackDistance: 2
   attackCooldown: 0.4
   lastTimeAttacked: 0
+--- !u!114 &1108330581646998847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2566365854443443711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 004e849be8dfb2844b7fe1a72c780f26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 7376697817742938040}
+  hitMat: {fileID: 2100000, guid: 4e87cd18ab6b93c48ae695689c102c3a, type: 2}
 --- !u!1 &7859483298186824464
 GameObject:
   m_ObjectHideFlags: 0

@@ -33,6 +33,7 @@ public class Entity : MonoBehaviour
 
     public int facingDir { get; private set; } = 1;
     protected bool facingRight = true;
+    public EntityFX fX { get; private set; }
 
     protected virtual void Awake()
     {
@@ -41,6 +42,7 @@ public class Entity : MonoBehaviour
 
     protected virtual void Start()
     {
+        fX = GetComponent<EntityFX>();
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
@@ -84,6 +86,7 @@ public class Entity : MonoBehaviour
     #region [======== Actions ==========]
     public void Damage()
     {
+        fX.StartCoroutine(fX.FlashFX());
         Debug.Log(gameObject.name + "Was damaged");
     }
     
