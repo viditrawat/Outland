@@ -7,7 +7,13 @@ public class EnemyBase : Entity
 
     [SerializeField] protected LayerMask playerMask;
 
-    [Header("Move Info")]
+
+    [Header("Damage Info")]
+    public float damageDuration;
+    public Vector2 damageDirection;
+    protected bool canBeDamage;
+    [SerializeField] protected GameObject counterImage;
+
     public float moveSpeed = 2f;
     public float idleTime = 1f;
     public float battleTime = 2f;
@@ -29,6 +35,30 @@ public class EnemyBase : Entity
         base.Update();
         stateMachine.currentState.Update();
 
+
+    }
+
+    public virtual void OpenCounterAttackWindw()
+    {
+        canBeDamage = true;
+        counterImage.SetActive(true);
+    }
+
+    public virtual void CloseCounterAttackWindow()
+    {
+        canBeDamage = false;
+        counterImage.SetActive(false);
+    }
+
+    public virtual bool CanBeDamage()
+    {
+        if(canBeDamage)
+        {
+            CloseCounterAttackWindow();
+            return true;
+        }
+
+        return false;
     }
 
     public virtual void AnimationFinishTrigger() => stateMachine.currentState.AnimationFinishTrigger();

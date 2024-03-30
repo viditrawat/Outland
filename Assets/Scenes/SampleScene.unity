@@ -356,10 +356,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Goblin
       objectReference: {fileID: 0}
-    - target: {fileID: 2824951246352832510, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
-      propertyPath: m_GravityScale
-      value: 12
-      objectReference: {fileID: 0}
     - target: {fileID: 7289748731485881530, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.73
@@ -399,14 +395,6 @@ PrefabInstance:
     - target: {fileID: 7289748731485881530, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8767333263748782644, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
-      propertyPath: knockBackDirection.x
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8767333263748782644, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
-      propertyPath: knockBackDirection.y
-      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

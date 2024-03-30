@@ -22,4 +22,14 @@ public class EnemyAnimationEvents : MonoBehaviour
         }
     }
 
+    private void OpenCounterWindow()
+    {
+        enemy.OpenCounterAttackWindw();
+    }
+
+    private void CloseCounterWindow()
+    {
+        enemy.CloseCounterAttackWindow();
+    }
+
 }

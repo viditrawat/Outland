@@ -13,6 +13,7 @@ public class GoblinController : EnemyBase
 
     public GoblinBattleState battleState { get; private set; }
     public GoblinAttackState attackState { get; private set; }
+    public GoblinDamageState damageState { get; private set; }
     
     #endregion
     protected override void Awake()
@@ -22,6 +23,7 @@ public class GoblinController : EnemyBase
         moveState = new GoblinMoveState(this, stateMachine, "Run", this);
         battleState = new GoblinBattleState(this, stateMachine, "Run", this);
         attackState = new GoblinAttackState(this, stateMachine, "Attack", this);
+        damageState = new GoblinDamageState(this, stateMachine, "Damage", this); 
     }
 
     protected override void Start()
@@ -33,5 +35,15 @@ public class GoblinController : EnemyBase
     protected override void Update()
     {
         base.Update();
+    }
+
+    public override bool CanBeDamage()
+    {
+        if(base.CanBeDamage())
+        {
+            stateMachine.ChangeState(damageState);
+            return true;
+        }
+        return false;
     }
 }
