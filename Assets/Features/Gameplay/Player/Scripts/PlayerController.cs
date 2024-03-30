@@ -11,6 +11,7 @@ public class PlayerController : Entity
     #region [ ============ Attack Variables ==========]
     [Header("Attack Details")]
     public Vector2[] attackMovement;
+
     public bool isBusy {  get; private set; }
 
     #endregion

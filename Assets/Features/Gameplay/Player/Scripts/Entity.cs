@@ -15,6 +15,8 @@ public class Entity : MonoBehaviour
     #region [ ========= Collision Variables =========]
 
     [Header("Collision Info")]
+    public Transform attackCheck;
+    public float attackCheckRadius;
     [SerializeField] protected Transform groundCheck;
     [SerializeField] protected float groundCheckDistance;
     [SerializeField] protected Transform wallCheck;
@@ -79,6 +81,14 @@ public class Entity : MonoBehaviour
 
     #endregion
 
+    #region [======== Actions ==========]
+    public void Damage()
+    {
+        Debug.Log(gameObject.name + "Was damaged");
+    }
+    
+    #endregion
+
 
     #region [======= Getters ========]
     public virtual bool IsGroundDetected() => Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, groundLayer);
@@ -93,7 +103,7 @@ public class Entity : MonoBehaviour
     {
         Gizmos.DrawLine(groundCheck.position, new Vector3(groundCheck.position.x, groundCheck.position.y - groundCheckDistance));
         Gizmos.DrawLine(wallCheck.position, new Vector3(wallCheck.position.x + wallCheckDistance, wallCheck.position.y));
-
+        Gizmos.DrawWireSphere(attackCheck.position, attackCheckRadius);
     }
     #endregion
 
