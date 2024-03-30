@@ -24,6 +24,12 @@ public class Entity : MonoBehaviour
     [SerializeField] protected LayerMask groundLayer;
     #endregion
 
+    [Header("Knock Back Info")]
+    [SerializeField] protected Vector2 knockBackDirection;
+    [SerializeField] protected float knockBackDuration = 0.07f;
+    protected bool isKnocked; 
+    
+
 
     #region[====== ANimations ==========]
     public Animator anim { get; private set; }
@@ -55,10 +61,16 @@ public class Entity : MonoBehaviour
     #region [ ========= velocity ==========]
     public void SetZeroVelocity()
     {
+        if(isKnocked)
+            return;
+
         rb.velocity = new Vector2(0, 0);
     }
     public void SetVelocity(float _xVelocity, float _yVelocity)
     {
+        if (isKnocked)
+            return;
+
         rb.velocity = new Vector2(_xVelocity, _yVelocity);
         FlipController(_xVelocity);
     }
@@ -87,7 +99,16 @@ public class Entity : MonoBehaviour
     public void Damage()
     {
         fX.StartCoroutine(fX.FlashFX());
+        StartCoroutine(HitKnockBack());
         Debug.Log(gameObject.name + "Was damaged");
+    }
+
+    protected virtual IEnumerator HitKnockBack()
+    {
+        isKnocked = true;
+        rb.velocity = new Vector2(knockBackDirection.x * -facingDir, knockBackDirection.y);
+        yield return new WaitForSeconds(knockBackDuration);
+        isKnocked = false;
     }
     
     #endregion
