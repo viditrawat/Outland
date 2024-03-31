@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class LevelUIController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    [SerializeField] private GameObject PauseMenu;
+    public void OpenPauseMenuPopup()
     {
-        
+        Time.timeScale = 0f;
+        PauseMenu.SetActive(true);
+    }
+    public void ClosePauseMenuPopup()
+    {
+        Time.timeScale = 1f;
+        PauseMenu.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void QuitLevel()
     {
-        
+        UiManager.instance.OpenMainMenu();
     }
+
+
 }

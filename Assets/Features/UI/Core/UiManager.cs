@@ -22,9 +22,14 @@ public class UiManager : MonoBehaviour
     }
 
 
-    public void OpenLevel(string _level)
+    public void OpenScene(string _level)
     {
         SceneManager.LoadScene(_level);
+    }
+
+    public void OpenMainMenu()
+    {
+        OpenScene("MainMenu");
     }
 }
 

@@ -6,7 +6,7 @@ public class MainMenuController : MonoBehaviour
 {
     public void OpenLevelOne()
     {
-        UiManager.instance.OpenLevel("Level1");
+        UiManager.instance.OpenScene("Level1");
     }
 
    public void QuitGame()
