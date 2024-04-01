@@ -491,6 +491,7 @@ GameObject:
   - component: {fileID: 6927931599210226085}
   - component: {fileID: 9161838068001005629}
   - component: {fileID: 1371843756181875119}
+  - component: {fileID: 5053619817300920377}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -597,10 +598,13 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  knockBackDirection: {x: 0, y: 0}
+  knockBackDuration: 0.07
   attackMovement:
   - {x: 3, y: 1.5}
   - {x: 1, y: 2.5}
   - {x: 4, y: 1.5}
+  counterAttackDuration: 0.2
   moveSpeed: 8
   jumpFoce: 12
   dashCooldown: 1
@@ -632,6 +636,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1345040105399026}
   hitMat: {fileID: 2100000, guid: 4e87cd18ab6b93c48ae695689c102c3a, type: 2}
+--- !u!114 &5053619817300920377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6295684392518699881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aaa2ad22d2704a4ca60e34007ea5196, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strength:
+    baseValue: 0
+    modifiers: 
+  damage:
+    baseValue: 5
+    modifiers: 
+  maxHealth:
+    baseValue: 100
+    modifiers: 
+  currentHealth: 0
+  player: {fileID: 0}
 --- !u!1 &8987437492312741907
 GameObject:
   m_ObjectHideFlags: 0

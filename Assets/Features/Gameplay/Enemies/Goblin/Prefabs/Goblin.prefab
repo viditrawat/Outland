@@ -265,7 +265,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -13
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 0.6745098}
+  m_Color: {r: 1, g: 0, b: 0, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -320,6 +320,7 @@ GameObject:
   - component: {fileID: 7642664214243145090}
   - component: {fileID: 8767333263748782644}
   - component: {fileID: 1108330581646998847}
+  - component: {fileID: 7542285070581221386}
   m_Layer: 7
   m_Name: Goblin
   m_TagString: Untagged
@@ -466,6 +467,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 7376697817742938040}
   hitMat: {fileID: 2100000, guid: 4e87cd18ab6b93c48ae695689c102c3a, type: 2}
+--- !u!114 &7542285070581221386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2566365854443443711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68eb3b289ef495f40a3d558d1b4f310d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strength:
+    baseValue: 0
+    modifiers: 
+  damage:
+    baseValue: 10
+    modifiers: 
+  maxHealth:
+    baseValue: 100
+    modifiers: 
+  currentHealth: 0
+  enemy: {fileID: 0}
 --- !u!1 &7859483298186824464
 GameObject:
   m_ObjectHideFlags: 0

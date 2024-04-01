@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class Entity : MonoBehaviour
@@ -23,6 +24,8 @@ public class Entity : MonoBehaviour
     [SerializeField] protected float wallCheckDistance;
     [SerializeField] protected LayerMask groundLayer;
     #endregion
+
+    public CharacterStats stats {  get; private set; }
 
     [Header("Knock Back Info")]
     [SerializeField] protected Vector2 knockBackDirection;
@@ -51,6 +54,7 @@ public class Entity : MonoBehaviour
         fX = GetComponent<EntityFX>();
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        stats = GetComponent<CharacterStats>();
     }
 
     protected virtual void Update()
@@ -96,7 +100,7 @@ public class Entity : MonoBehaviour
     #endregion
 
     #region [======== Actions ==========]
-    public void Damage()
+    public void DamageEffect()
     {
         fX.StartCoroutine(fX.FlashFX());
         StartCoroutine(HitKnockBack());
