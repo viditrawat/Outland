@@ -768,7 +768,7 @@ MonoBehaviour:
   - soundType: 0
     soundClip: {fileID: 8300000, guid: 09203079898303140a806f6507022d32, type: 3}
   - soundType: 2
-    soundClip: {fileID: 8300000, guid: 17f1abe31ca7f584d88ed88e33e9b278, type: 3}
+    soundClip: {fileID: 8300000, guid: 3647c5f53a7968e43819fc1115827d0e, type: 3}
   - soundType: 3
     soundClip: {fileID: 8300000, guid: dadc9b6883f1eca4e9325f2b20929dd2, type: 3}
   - soundType: 4

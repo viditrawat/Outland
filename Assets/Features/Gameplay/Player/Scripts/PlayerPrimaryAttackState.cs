@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class PlayerPrimaryAttackState : PlayerState
@@ -19,6 +21,7 @@ public class PlayerPrimaryAttackState : PlayerState
             comboCounter = 0; 
 
         playerController.anim.SetInteger("ComboCounter", comboCounter);
+        AudioManager.Instance.Play(GetAttackSfx(comboCounter));
 
 
         float attackDir = playerController.facingDir;
@@ -29,6 +32,25 @@ public class PlayerPrimaryAttackState : PlayerState
 
         playerController.SetVelocity(playerController.attackMovement[comboCounter].x * attackDir, playerController.attackMovement[comboCounter].y);
         stateTimer = 0.1f;
+    }
+
+    private Sounds GetAttackSfx(int comboCounter)
+    {
+
+        switch(comboCounter)
+        {
+            case 0:
+                return Sounds.PlayerAttack1;
+                //break;
+            case 1:
+                return Sounds.PlayerAttack2;
+                //break;
+            case 2:
+                return Sounds.PlayerAttack3;
+                //break;
+        }
+
+        return Sounds.PlayerAttack3;
     }
 
     public override void Exit()
