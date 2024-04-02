@@ -8,6 +8,8 @@ public class PlayerDashState : PlayerState
     {
     }
 
+    #region [====== Overrides =========]
+
     public override void Enter()
     {
         base.Enter();
@@ -30,4 +32,6 @@ public class PlayerDashState : PlayerState
         if (stateTimer < 0)
             stateMachine.ChangeState(playerController.idleState);
     }
+
+    #endregion
 }

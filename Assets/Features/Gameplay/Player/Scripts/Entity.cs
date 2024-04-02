@@ -87,6 +87,7 @@ public class Entity : MonoBehaviour
         FlipController(_xVelocity);
     }
     #endregion
+
     #region [======= Flips ========]
 
     public virtual void Flip()
@@ -133,13 +134,10 @@ public class Entity : MonoBehaviour
     
     #endregion
 
-
     #region [======= Getters ========]
     public virtual bool IsGroundDetected() => Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, groundLayer);
     public virtual bool IsWalldetected() => Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, wallCheckDistance, groundLayer);
     #endregion
-
-
 
     #region[ ========= Gizmos ==========]
 

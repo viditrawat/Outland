@@ -18,6 +18,8 @@ public class GoblinController : EnemyBase
     public GoblinDeathState deathState { get; private set; }
 
     #endregion
+
+    #region [======== Overrides =========]
     protected override void Awake()
     {
         base.Awake();
@@ -55,4 +57,5 @@ public class GoblinController : EnemyBase
         base.Die();
         stateMachine.ChangeState(deathState);
     }
+    #endregion
 }

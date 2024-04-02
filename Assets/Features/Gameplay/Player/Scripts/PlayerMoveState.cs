@@ -8,6 +8,7 @@ public class PlayerMoveState : PlayerGroundedState
     {
     }
 
+    #region [======== Overrides =========]
     public override void Enter()
     {
         base.Enter();
@@ -32,4 +33,5 @@ public class PlayerMoveState : PlayerGroundedState
             stateMachine.ChangeState(playerController.idleState);
         }
     }
+    #endregion
 }

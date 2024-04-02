@@ -10,7 +10,7 @@ public class GoblinDamageState : EnemyState
         this.goblin = _goblin;
     }
 
-
+    #region [======== Overrides =========]
     public override void Enter()
     {
         base.Enter();
@@ -35,4 +35,5 @@ public class GoblinDamageState : EnemyState
             stateMachine.ChangeState(goblin.idleState);
         }
     }
+    #endregion
 }

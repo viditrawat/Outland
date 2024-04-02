@@ -8,18 +8,23 @@ public class CharacterStats : MonoBehaviour
 {
     
     public Stats strength;
-    public Stats damage;
     public Stats maxHealth;
 
     public int currentHealth;
 
     public Action onHealthChanged;
 
-    // Start is called before the first frame update
-   protected virtual void Start()
+    #region [ ========= Initialization ======]
+    protected virtual void Start()
     {
         currentHealth = GetMaxHealthValue();
     }
+
+    #endregion
+
+
+
+    #region [ ======== Damage =========]
 
     public virtual void DoDamage(CharacterStats _targetStats)
     {
@@ -45,13 +50,20 @@ public class CharacterStats : MonoBehaviour
         onHealthChanged?.Invoke();
     }
 
+    protected virtual void Die()
+    {
+
+    }
+
+    #endregion
+
+
+    #region [ ========== Getters =========]
     public int GetMaxHealthValue()
     {
         return maxHealth.GetValue();
     }
-     
-    protected virtual void Die()
-    {
-        
-    }
+    #endregion
+
+
 }

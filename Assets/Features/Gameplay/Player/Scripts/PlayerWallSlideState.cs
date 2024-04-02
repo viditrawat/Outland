@@ -8,6 +8,7 @@ public class PlayerWallSlideState : PlayerState
     {
     }
 
+    #region [======== Overrides =========]
     public override void Enter()
     {
         base.Enter();
@@ -40,4 +41,5 @@ public class PlayerWallSlideState : PlayerState
         if(playerController.IsGroundDetected())
             stateMachine.ChangeState(playerController.idleState);
     }
+    #endregion
 }

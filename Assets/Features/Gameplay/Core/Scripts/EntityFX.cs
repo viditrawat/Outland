@@ -23,6 +23,8 @@ public class EntityFX : MonoBehaviour
        
     }
 
+    #region [ ========== ANimation Event Functions =========]
+
     private void RedColorBlink()
     {
          if(spriteRenderer.color != Color.white)
@@ -36,4 +38,6 @@ public class EntityFX : MonoBehaviour
         CancelInvoke();
         spriteRenderer.color = Color.white;
     }
+
+    #endregion
 }

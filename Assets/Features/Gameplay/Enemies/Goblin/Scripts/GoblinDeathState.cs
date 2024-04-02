@@ -10,7 +10,7 @@ public class GoblinDeathState : EnemyState
         this.goblin = _goblin;
     }
 
-
+    #region [======== Overrides =========]
     public override void Enter()
     {
         base.Enter();
@@ -35,4 +35,5 @@ public class GoblinDeathState : EnemyState
             rb.velocity = new Vector2(0, 10);
         }
     }
+    #endregion
 }

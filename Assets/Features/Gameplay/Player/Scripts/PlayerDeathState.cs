@@ -8,6 +8,7 @@ public class PlayerDeathState : PlayerState
     {
     }
 
+    #region [====== Overrides =========]
     public override void AnimationFinishtrigger()
     {
         base.AnimationFinishtrigger();
@@ -28,4 +29,6 @@ public class PlayerDeathState : PlayerState
         base.Update();
         playerController.SetZeroVelocity();
     }
+
+    #endregion
 }

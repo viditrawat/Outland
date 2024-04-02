@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemyStats : CharacterStats
 {
     [SerializeField] private EnemyBase enemy;
+
+    #region [======== Overrides =========]
     protected override void Start()
     {
         base.Start();
@@ -21,5 +23,7 @@ public class EnemyStats : CharacterStats
         base.Die();
         enemy.Die();
     }
+    #endregion
 
 }
+

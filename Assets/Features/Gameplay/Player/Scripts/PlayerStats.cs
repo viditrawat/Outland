@@ -6,6 +6,8 @@ public class PlayerStats : CharacterStats
 {
     [SerializeField] private PlayerController player;
     // Start is called before the first frame update
+
+    #region [======== Overrides =========]
     protected override void Start()
     {
         base.Start();
@@ -22,6 +24,7 @@ public class PlayerStats : CharacterStats
         base.Die();
         player.Die();
     }
+    #endregion
 
 
 }

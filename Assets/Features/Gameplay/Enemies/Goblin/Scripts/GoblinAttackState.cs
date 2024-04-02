@@ -10,6 +10,7 @@ public class GoblinAttackState : EnemyState
         this.goblin = _goblin;
     }
 
+    #region [======== Overrides =========]
     public override void Enter()
     {
         base.Enter();
@@ -31,4 +32,5 @@ public class GoblinAttackState : EnemyState
         if (triggerCalled)
             stateMachine.ChangeState(goblin.battleState);
     }
+    #endregion
 }
