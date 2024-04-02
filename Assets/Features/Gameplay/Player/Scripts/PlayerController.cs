@@ -46,6 +46,9 @@ public class PlayerController : Entity
     public PlayerPrimaryAttackState primaryAttack { get; private set; }
 
     public PlayerCounterAttackState counterAttackState { get; private set; }
+    
+    public PlayerDeathState deathState { get; private set; }
+    
     #endregion
 
 
@@ -66,6 +69,8 @@ public class PlayerController : Entity
 
         primaryAttack = new PlayerPrimaryAttackState(this, stateMachine, "Attack");
         counterAttackState = new PlayerCounterAttackState(this, stateMachine, "CounterAttack");
+        deathState = new PlayerDeathState(this, stateMachine, "Die");
+    
     }
 
     protected override void Start()
@@ -104,6 +109,12 @@ public class PlayerController : Entity
 
         }
         
+    }
+
+    public override void Die()
+    {
+        base.Die();
+        stateMachine.ChangeState(deathState);
     }
 
     public void Animationtrigger() => stateMachine.currentState.AnimationFinishtrigger();

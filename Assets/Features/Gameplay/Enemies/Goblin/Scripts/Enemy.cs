@@ -23,6 +23,7 @@ public class EnemyBase : Entity
     public float attackCooldown;
     [HideInInspector] public float lastTimeAttacked;
     public EnemyStateMachine stateMachine { get; private set; }
+    public string lastAnimBoolName {  get; private set; }
 
     protected override void Awake()
     {
@@ -59,6 +60,12 @@ public class EnemyBase : Entity
         }
 
         return false;
+    }
+
+
+    public virtual void AssignLastAnimName(string _animBoolName)
+    {
+        lastAnimBoolName = _animBoolName;
     }
 
     public virtual void AnimationFinishTrigger() => stateMachine.currentState.AnimationFinishTrigger();

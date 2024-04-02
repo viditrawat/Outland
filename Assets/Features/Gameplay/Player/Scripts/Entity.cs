@@ -16,6 +16,7 @@ public class Entity : MonoBehaviour
     #region [ ========= Collision Variables =========]
 
     [Header("Collision Info")]
+    public CapsuleCollider2D collider;
     public Transform attackCheck;
     public float attackCheckRadius;
     [SerializeField] protected Transform groundCheck;
@@ -114,6 +115,12 @@ public class Entity : MonoBehaviour
         yield return new WaitForSeconds(knockBackDuration);
         isKnocked = false;
     }
+
+    public virtual void Die()
+    {
+
+    }
+
     
     #endregion
 
