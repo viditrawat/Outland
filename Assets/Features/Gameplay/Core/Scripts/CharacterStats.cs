@@ -9,7 +9,7 @@ public class CharacterStats : MonoBehaviour
     
     public Stats strength;
     public Stats maxHealth;
-
+    public Stats damage;
     public int currentHealth;
 
     public Action onHealthChanged;
