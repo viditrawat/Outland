@@ -18,7 +18,11 @@ public class EnemyAnimationEvents : MonoBehaviour
         foreach (var hit in colliders)
         {
             if (hit.GetComponent<PlayerController>() != null)
-                hit.GetComponent<PlayerController>().Damage();
+            {
+                PlayerStats target = hit.GetComponent<PlayerStats>();
+                enemy.stats.DoDamage(target);
+            }
+                
         }
     }
 

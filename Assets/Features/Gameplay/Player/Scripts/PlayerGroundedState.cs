@@ -8,6 +8,7 @@ public class PlayerGroundedState : PlayerState
     {
     }
 
+    #region [====== Overrides =========]
     public override void Enter()
     {
         base.Enter();
@@ -36,4 +37,6 @@ public class PlayerGroundedState : PlayerState
         if (Input.GetKeyDown(KeyCode.Space) && playerController.IsGroundDetected())
             stateMachine.ChangeState(playerController.jumpState);
     }
+
+    #endregion
 }

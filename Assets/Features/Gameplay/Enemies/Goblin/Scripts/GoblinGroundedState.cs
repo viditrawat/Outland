@@ -11,6 +11,7 @@ public class GoblinGroundedState : EnemyState
         this.goblin = _goblin;
     }
 
+    #region [======== Overrides =========]
     public override void Enter()
     {
         base.Enter();
@@ -31,4 +32,5 @@ public class GoblinGroundedState : EnemyState
             stateMachine.ChangeState(goblin.battleState);
         }
     }
+    #endregion
 }

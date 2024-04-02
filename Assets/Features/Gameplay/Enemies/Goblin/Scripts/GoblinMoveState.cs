@@ -8,6 +8,7 @@ public class GoblinMoveState : GoblinGroundedState
     {
     }
 
+    #region [======== Overrides =========]
     public override void Enter()
     {
         base.Enter();
@@ -31,4 +32,5 @@ public class GoblinMoveState : GoblinGroundedState
             stateMachine.ChangeState(goblin.idleState);
         }
     }
+    #endregion
 }

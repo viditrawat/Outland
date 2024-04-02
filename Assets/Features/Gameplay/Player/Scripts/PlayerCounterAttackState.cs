@@ -8,6 +8,8 @@ public class PlayerCounterAttackState : PlayerState
     {
     }
 
+    #region [ ======== Overrides =========]
+
     public override void Enter()
     {
         base.Enter();
@@ -44,4 +46,6 @@ public class PlayerCounterAttackState : PlayerState
             stateMachine.ChangeState(playerController.idleState);
         }
     }
+
+    #endregion
 }

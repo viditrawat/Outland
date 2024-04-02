@@ -15,7 +15,11 @@ public class GoblinController : EnemyBase
     public GoblinAttackState attackState { get; private set; }
     public GoblinDamageState damageState { get; private set; }
     
+    public GoblinDeathState deathState { get; private set; }
+
     #endregion
+
+    #region [======== Overrides =========]
     protected override void Awake()
     {
         base.Awake();
@@ -23,7 +27,8 @@ public class GoblinController : EnemyBase
         moveState = new GoblinMoveState(this, stateMachine, "Run", this);
         battleState = new GoblinBattleState(this, stateMachine, "Run", this);
         attackState = new GoblinAttackState(this, stateMachine, "Attack", this);
-        damageState = new GoblinDamageState(this, stateMachine, "Damage", this); 
+        damageState = new GoblinDamageState(this, stateMachine, "Damage", this);
+        deathState = new GoblinDeathState(this, stateMachine, "Idle", this);
     }
 
     protected override void Start()
@@ -46,4 +51,11 @@ public class GoblinController : EnemyBase
         }
         return false;
     }
+
+    public override void Die()
+    {
+        base.Die();
+        stateMachine.ChangeState(deathState);
+    }
+    #endregion
 }

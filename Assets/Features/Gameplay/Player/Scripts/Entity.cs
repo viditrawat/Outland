@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class Entity : MonoBehaviour
@@ -15,6 +17,7 @@ public class Entity : MonoBehaviour
     #region [ ========= Collision Variables =========]
 
     [Header("Collision Info")]
+    public CapsuleCollider2D collider;
     public Transform attackCheck;
     public float attackCheckRadius;
     [SerializeField] protected Transform groundCheck;
@@ -23,6 +26,8 @@ public class Entity : MonoBehaviour
     [SerializeField] protected float wallCheckDistance;
     [SerializeField] protected LayerMask groundLayer;
     #endregion
+
+    public CharacterStats stats {  get; private set; }
 
     [Header("Knock Back Info")]
     [SerializeField] protected Vector2 knockBackDirection;
@@ -35,6 +40,12 @@ public class Entity : MonoBehaviour
     public Animator anim { get; private set; }
     public Rigidbody2D rb { get; private set; }
 
+    #endregion
+
+    #region [========== Events ========]
+
+    public Action onFlipped;
+    
     #endregion
 
     public int facingDir { get; private set; } = 1;
@@ -51,6 +62,7 @@ public class Entity : MonoBehaviour
         fX = GetComponent<EntityFX>();
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        stats = GetComponent<CharacterStats>();
     }
 
     protected virtual void Update()
@@ -75,6 +87,7 @@ public class Entity : MonoBehaviour
         FlipController(_xVelocity);
     }
     #endregion
+
     #region [======= Flips ========]
 
     public virtual void Flip()
@@ -82,6 +95,8 @@ public class Entity : MonoBehaviour
         facingDir = facingDir * -1;
         facingRight = !facingRight;
         transform.Rotate(0, 180f, 0);
+
+        onFlipped?.Invoke();
     }
 
     public virtual void FlipController(float _x)
@@ -96,7 +111,7 @@ public class Entity : MonoBehaviour
     #endregion
 
     #region [======== Actions ==========]
-    public void Damage()
+    public void DamageEffect()
     {
         fX.StartCoroutine(fX.FlashFX());
         StartCoroutine(HitKnockBack());
@@ -110,16 +125,19 @@ public class Entity : MonoBehaviour
         yield return new WaitForSeconds(knockBackDuration);
         isKnocked = false;
     }
+
+    public virtual void Die()
+    {
+
+    }
+
     
     #endregion
-
 
     #region [======= Getters ========]
     public virtual bool IsGroundDetected() => Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, groundLayer);
     public virtual bool IsWalldetected() => Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, wallCheckDistance, groundLayer);
     #endregion
-
-
 
     #region[ ========= Gizmos ==========]
 

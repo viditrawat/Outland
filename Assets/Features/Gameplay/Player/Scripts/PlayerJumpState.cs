@@ -8,6 +8,7 @@ public class PlayerJumpState : PlayerState
     {
     }
 
+    #region [======== Overrides =========]
     public override void Enter()
     {
         base.Enter();
@@ -26,5 +27,7 @@ public class PlayerJumpState : PlayerState
         if (rb.velocity.y < 0)
             stateMachine.ChangeState(playerController.airState);
     }
+
+    #endregion
 }
 

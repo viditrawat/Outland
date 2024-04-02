@@ -8,6 +8,7 @@ public class GoblinIdleState : GoblinGroundedState
     {
     }
 
+    #region [======== Overrides =========]
     public override void Enter()
     {
         base.Enter();
@@ -30,4 +31,6 @@ public class GoblinIdleState : GoblinGroundedState
         }
            
     }
+
+    #endregion
 }

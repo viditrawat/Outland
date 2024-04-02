@@ -8,6 +8,7 @@ public class PlayerMoveState : PlayerGroundedState
     {
     }
 
+    #region [======== Overrides =========]
     public override void Enter()
     {
         base.Enter();
@@ -21,7 +22,10 @@ public class PlayerMoveState : PlayerGroundedState
     public override void Update()
     {
         base.Update();
-
+        if (xInput != 0)
+            AudioManager.Instance.Play(Sounds.PlayerMovement);
+        else
+            AudioManager.Instance.StopMovementSound();
         playerController.SetVelocity(xInput * playerController.moveSpeed, rb.velocity.y);
 
         if (xInput == 0 || playerController.IsWalldetected())
@@ -29,4 +33,5 @@ public class PlayerMoveState : PlayerGroundedState
             stateMachine.ChangeState(playerController.idleState);
         }
     }
+    #endregion
 }

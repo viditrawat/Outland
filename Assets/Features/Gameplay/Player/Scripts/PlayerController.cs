@@ -30,7 +30,6 @@ public class PlayerController : Entity
 
     #endregion
 
-
     #region [======== States =========]
     public PlayerStateMachine stateMachine {  get; private set; }
     public PlayerIdleState idleState { get; private set; }
@@ -46,9 +45,10 @@ public class PlayerController : Entity
     public PlayerPrimaryAttackState primaryAttack { get; private set; }
 
     public PlayerCounterAttackState counterAttackState { get; private set; }
+    
+    public PlayerDeathState deathState { get; private set; }
+
     #endregion
-
-
 
     #region [ ========== Init ===========]
     protected override void Awake()
@@ -66,6 +66,8 @@ public class PlayerController : Entity
 
         primaryAttack = new PlayerPrimaryAttackState(this, stateMachine, "Attack");
         counterAttackState = new PlayerCounterAttackState(this, stateMachine, "CounterAttack");
+        deathState = new PlayerDeathState(this, stateMachine, "Die");
+    
     }
 
     protected override void Start()
@@ -76,8 +78,9 @@ public class PlayerController : Entity
 
     #endregion
 
+    public void Animationtrigger() => stateMachine.currentState.AnimationFinishtrigger();
 
-
+    #region [ ======== Overrides =========]
     protected override void Update()
     {
         base.Update();
@@ -86,6 +89,14 @@ public class PlayerController : Entity
         CheckForDashInput();
 
     }
+
+    public override void Die()
+    {
+        base.Die();
+        stateMachine.ChangeState(deathState);
+    }
+    #endregion
+
 
     private void CheckForDashInput()
     {
@@ -106,7 +117,6 @@ public class PlayerController : Entity
         
     }
 
-    public void Animationtrigger() => stateMachine.currentState.AnimationFinishtrigger();
 
 
 

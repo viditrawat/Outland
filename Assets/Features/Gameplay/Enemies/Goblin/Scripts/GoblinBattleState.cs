@@ -12,6 +12,7 @@ public class GoblinBattleState : EnemyState
         this.goblin = _goblin;
     }
 
+    #region [======== Overrides =========]
     public override void Enter()
     {
         base.Enter();
@@ -66,5 +67,6 @@ public class GoblinBattleState : EnemyState
         Debug.Log("Attack is on cooldown");
         return false;
     }
+    #endregion
 }
 
