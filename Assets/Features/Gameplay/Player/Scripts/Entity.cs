@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
@@ -39,6 +40,12 @@ public class Entity : MonoBehaviour
     public Animator anim { get; private set; }
     public Rigidbody2D rb { get; private set; }
 
+    #endregion
+
+    #region [========== Events ========]
+
+    public Action onFlipped;
+    
     #endregion
 
     public int facingDir { get; private set; } = 1;
@@ -87,6 +94,8 @@ public class Entity : MonoBehaviour
         facingDir = facingDir * -1;
         facingRight = !facingRight;
         transform.Rotate(0, 180f, 0);
+
+        onFlipped?.Invoke();
     }
 
     public virtual void FlipController(float _x)

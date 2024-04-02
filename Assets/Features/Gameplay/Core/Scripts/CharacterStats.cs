@@ -6,16 +6,19 @@ using UnityEngine;
 
 public class CharacterStats : MonoBehaviour
 {
+    
     public Stats strength;
     public Stats damage;
     public Stats maxHealth;
 
-    [SerializeField] private int currentHealth;
+    public int currentHealth;
+
+    public Action onHealthChanged;
 
     // Start is called before the first frame update
    protected virtual void Start()
     {
-        currentHealth = maxHealth.GetValue();
+        currentHealth = GetMaxHealthValue();
     }
 
     public virtual void DoDamage(CharacterStats _targetStats)
@@ -28,10 +31,23 @@ public class CharacterStats : MonoBehaviour
 
     public virtual void Takedamage(int _damage)
     {
-        currentHealth -= _damage;
+        DecreaseHealth(_damage);
         Debug.Log(_damage);
         if(currentHealth <=0)
             Die();
+
+    }
+
+    protected virtual void DecreaseHealth(int _damage)
+    {
+        currentHealth -= _damage;
+
+        onHealthChanged?.Invoke();
+    }
+
+    public int GetMaxHealthValue()
+    {
+        return maxHealth.GetValue();
     }
      
     protected virtual void Die()
