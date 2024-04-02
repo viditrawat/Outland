@@ -472,9 +472,9 @@ MonoBehaviour:
   attackCheck: {fileID: 2152045171268947057}
   attackCheckRadius: 0.8
   groundCheck: {fileID: 685336081585387674}
-  groundCheckDistance: 1.05
+  groundCheckDistance: 0.3
   wallCheck: {fileID: 2240903622588771430}
-  wallCheckDistance: 0.46
+  wallCheckDistance: 2.8
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -521,10 +521,10 @@ MonoBehaviour:
   strength:
     baseValue: 0
     modifiers: 
-  damage:
-    baseValue: 5
-    modifiers: 
   maxHealth:
+    baseValue: 20
+    modifiers: 
+  damage:
     baseValue: 5
     modifiers: 
   currentHealth: 0
