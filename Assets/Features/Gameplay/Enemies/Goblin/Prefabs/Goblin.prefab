@@ -474,7 +474,7 @@ MonoBehaviour:
   groundCheck: {fileID: 685336081585387674}
   groundCheckDistance: 0.3
   wallCheck: {fileID: 2240903622588771430}
-  wallCheckDistance: 2.8
+  wallCheckDistance: 0.85
   groundLayer:
     serializedVersion: 2
     m_Bits: 8

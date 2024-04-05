@@ -26,7 +26,7 @@ public class GoblinMoveState : GoblinGroundedState
 
         Debug.Log("IsWallDetecetd : " + goblin.IsWalldetected() + ", Is ground Detected:  " + goblin.IsGroundDetected());
 
-        if(goblin.IsWalldetected() || goblin.IsWalldetected())
+        if(goblin.IsWalldetected() || !goblin.IsGroundDetected())
         {
             goblin.Flip();
             stateMachine.ChangeState(goblin.idleState);
