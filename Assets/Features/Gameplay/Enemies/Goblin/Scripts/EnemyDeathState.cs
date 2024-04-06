@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GoblinDeathState : EnemyState
+public class EnemyDeathState : EnemyState
 {
-    private GoblinController goblin;
-    public GoblinDeathState(EnemyBase _enemyBase, EnemyStateMachine _stateMachine, string _animBoolName, GoblinController _goblin) : base(_enemyBase, _stateMachine, _animBoolName)
+    private EnemyController enemy;
+    public EnemyDeathState(EnemyBase _enemyBase, EnemyStateMachine _stateMachine, string _animBoolName, EnemyController _enemy) : base(_enemyBase, _stateMachine, _animBoolName)
     {
-        this.goblin = _goblin;
+        this.enemy = _enemy;
     }
 
     #region [======== Overrides =========]
@@ -15,9 +15,9 @@ public class GoblinDeathState : EnemyState
     {
         base.Enter();
 
-        goblin.anim.SetBool(goblin.lastAnimBoolName, true);
-        goblin.anim.speed = 0;
-        goblin.collider.enabled = false;
+        enemy.anim.SetBool(enemy.lastAnimBoolName, true);
+        enemy.anim.speed = 0;
+        enemy.collider.enabled = false;
         stateTimer = 0.1f;
     }
 

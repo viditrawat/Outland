@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GoblinGroundedState : EnemyState
+public class EnemyGroundedState : EnemyState
 {
-    protected GoblinController goblin;
+    protected EnemyController enemy;
     protected Transform player;
-    public GoblinGroundedState(EnemyBase _enemyBase, EnemyStateMachine _stateMachine, string _animBoolName, GoblinController _goblin) : base(_enemyBase, _stateMachine, _animBoolName)
+    public EnemyGroundedState(EnemyBase _enemyBase, EnemyStateMachine _stateMachine, string _animBoolName, EnemyController _enemy) : base(_enemyBase, _stateMachine, _animBoolName)
     {
-        this.goblin = _goblin;
+        this.enemy = _enemy;
     }
 
     #region [======== Overrides =========]
@@ -27,9 +27,9 @@ public class GoblinGroundedState : EnemyState
     {
         base.Update();
 
-        if(enemy.IsPlayerDetected() || Vector2.Distance(goblin.transform.position, player.position) < 2)
+        if(base.enemBase.IsPlayerDetected() || Vector2.Distance(enemy.transform.position, player.position) < 2)
         {
-            stateMachine.ChangeState(goblin.battleState);
+            stateMachine.ChangeState(enemy.battleState);
         }
     }
     #endregion

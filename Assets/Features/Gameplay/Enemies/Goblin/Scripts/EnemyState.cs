@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyState 
 {
     protected EnemyStateMachine stateMachine;
-    protected EnemyBase enemy;
+    protected EnemyBase enemBase;
     protected Rigidbody2D rb;
 
     protected bool triggerCalled;
@@ -14,7 +14,7 @@ public class EnemyState
 
     public EnemyState(EnemyBase _enemyBase, EnemyStateMachine _stateMachine, string _animBoolName)
     {
-        this.enemy = _enemyBase;
+        this.enemBase = _enemyBase;
         this.stateMachine = _stateMachine;
         animBoolName = _animBoolName;
     }
@@ -22,15 +22,15 @@ public class EnemyState
     public virtual void Enter()
     {
         triggerCalled = false;
-        rb = enemy.rb;
-        enemy.anim.SetBool(animBoolName, true);
+        rb = enemBase.rb;
+        enemBase.anim.SetBool(animBoolName, true);
     }
 
     public virtual void Exit()
     {
         
-        enemy.anim.SetBool(animBoolName, false);
-        enemy.AssignLastAnimName(animBoolName);
+        enemBase.anim.SetBool(animBoolName, false);
+        enemBase.AssignLastAnimName(animBoolName);
     }
 
     public virtual void Update()

@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GoblinAttackState : EnemyState
+public class EnemyAttackState : EnemyState
 {
-    private GoblinController goblin;
-    public GoblinAttackState(EnemyBase _enemyBase, EnemyStateMachine _stateMachine, string _animBoolName, GoblinController _goblin) : base(_enemyBase, _stateMachine, _animBoolName)
+    private EnemyController goblin;
+    public EnemyAttackState(EnemyBase _enemyBase, EnemyStateMachine _stateMachine, string _animBoolName, EnemyController _goblin) : base(_enemyBase, _stateMachine, _animBoolName)
     {
         this.goblin = _goblin;
     }
@@ -20,14 +20,14 @@ public class GoblinAttackState : EnemyState
     {
         base.Exit();
 
-        enemy.lastTimeAttacked = Time.time;
+        enemBase.lastTimeAttacked = Time.time;
     }
 
     public override void Update()
     {
         base.Update();
 
-        enemy.SetZeroVelocity();
+        enemBase.SetZeroVelocity();
 
         if (triggerCalled)
             stateMachine.ChangeState(goblin.battleState);

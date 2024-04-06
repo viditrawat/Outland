@@ -1903,6 +1903,83 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6835871034555725538, guid: 65f3187aae97da84ebdbe77d6268e10a, type: 3}
   m_PrefabInstance: {fileID: 7453247035954813481}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &872811892
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1851059597609988379, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1851059597609988379, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566365854443443711, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
+      propertyPath: m_Name
+      value: Goblin
+      objectReference: {fileID: 0}
+    - target: {fileID: 3539648251559991327, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
+      propertyPath: entity
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010328346578010920, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289748731485881530, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.5681207
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289748731485881530, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289748731485881530, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289748731485881530, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289748731485881530, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289748731485881530, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289748731485881530, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289748731485881530, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289748731485881530, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289748731485881530, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7542285070581221386, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
 --- !u!1 &892699699
 GameObject:
   m_ObjectHideFlags: 0
@@ -2042,14 +2119,6 @@ PrefabInstance:
     - target: {fileID: 4576626090075967072, guid: 04512ac1a4ab92644b3e59e1ee78296b, type: 3}
       propertyPath: m_Name
       value: Skeleton
-      objectReference: {fileID: 0}
-    - target: {fileID: 8409756816110621589, guid: 04512ac1a4ab92644b3e59e1ee78296b, type: 3}
-      propertyPath: damage.baseValue
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8409756816110621589, guid: 04512ac1a4ab92644b3e59e1ee78296b, type: 3}
-      propertyPath: maxHealth.baseValue
-      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8733749419441807141, guid: 04512ac1a4ab92644b3e59e1ee78296b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2767,3 +2836,4 @@ SceneRoots:
   - {fileID: 3442989942162702071}
   - {fileID: 461679126}
   - {fileID: 906967473}
+  - {fileID: 872811892}

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyAnimationEvents : MonoBehaviour
 {
-    [SerializeField] private GoblinController enemy;
+    [SerializeField] private EnemyController enemy;
 
     public void AnimationTrigger()
     {
