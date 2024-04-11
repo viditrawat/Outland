@@ -8,6 +8,7 @@ public class UiManager : MonoBehaviour
 {
     public static UiManager instance;
 
+
     private void Awake()
     {
         if (instance == null)
@@ -31,5 +32,6 @@ public class UiManager : MonoBehaviour
     {
         OpenScene("MainMenu");
     }
+
 }
 
