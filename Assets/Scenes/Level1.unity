@@ -930,7 +930,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &190500479
 Transform:
   m_ObjectHideFlags: 0
@@ -7023,6 +7023,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 701002188}
+  - component: {fileID: 701002189}
   m_Layer: 3
   m_Name: Background
   m_TagString: Untagged
@@ -7064,6 +7065,20 @@ Transform:
   - {fileID: 925892184}
   m_Father: {fileID: 20075941}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &701002189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701002187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3be4ace631f85814f84521e68e8a487f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 844407232}
+  parallaxEffect: 1
 --- !u!1 &701798517
 GameObject:
   m_ObjectHideFlags: 0
@@ -7844,6 +7859,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65f3187aae97da84ebdbe77d6268e10a, type: 3}
+--- !u!1 &844407232 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6835871034555725538, guid: 65f3187aae97da84ebdbe77d6268e10a, type: 3}
+  m_PrefabInstance: {fileID: 844407231}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &863051280
 GameObject:
   m_ObjectHideFlags: 0
@@ -8111,7 +8131,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &891992554
 Transform:
   m_ObjectHideFlags: 0
@@ -10390,6 +10410,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1418112648}
   m_CullTransparentMesh: 1
+--- !u!114 &1420547199 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1906559532415322237, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
+  m_PrefabInstance: {fileID: 1811113086}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67b91145d02d3e44590ed9454dd96466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1506484636
 GameObject:
   m_ObjectHideFlags: 0
@@ -13307,6 +13338,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Goblin (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3539648251559991327, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
+      propertyPath: entity
+      value: 
+      objectReference: {fileID: 1420547199}
     - target: {fileID: 7289748731485881530, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
       propertyPath: m_LocalPosition.x
       value: 25.35
