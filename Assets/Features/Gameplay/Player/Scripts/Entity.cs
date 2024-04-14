@@ -93,7 +93,7 @@ public class Entity : MonoBehaviour
     public virtual void Flip()
     {
         facingDir = facingDir * -1;
-a        facingRight = !facingRight;
+        facingRight = !facingRight;
         transform.Rotate(0, 180f, 0);
 
         onFlipped?.Invoke();
