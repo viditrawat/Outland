@@ -41,7 +41,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1948500762757934088}
   - component: {fileID: 5536605453097730361}
-  - component: {fileID: 404124454455997019}
   m_Layer: 6
   m_Name: WallSensor_L1
   m_TagString: Untagged
@@ -99,18 +98,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.1}
   serializedVersion: 2
   m_Radius: 0.05
---- !u!114 &404124454455997019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1991425650565608612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f2a8bdc7f41b704693ad497097f30dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2156435263249050073
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,7 +196,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5118666911963339496}
   - component: {fileID: 383337080983551522}
-  - component: {fileID: 4829668276554053287}
   m_Layer: 6
   m_Name: GroundSensor
   m_TagString: Untagged
@@ -267,18 +253,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.1}
   serializedVersion: 2
   m_Radius: 0.05
---- !u!114 &4829668276554053287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2687638151201947349}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f2a8bdc7f41b704693ad497097f30dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3139638886584028208
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,7 +390,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1545500214778358718}
   - component: {fileID: 4825454703866336111}
-  - component: {fileID: 2270025768895980221}
   m_Layer: 6
   m_Name: WallSensor_R2
   m_TagString: Untagged
@@ -474,18 +447,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.1}
   serializedVersion: 2
   m_Radius: 0.05
---- !u!114 &2270025768895980221
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3730935784224193657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f2a8bdc7f41b704693ad497097f30dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4037068055478814195
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,7 +569,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2457576652517624259}
   - component: {fileID: 2508028057215496196}
-  - component: {fileID: 2840909125099351987}
   m_Layer: 6
   m_Name: WallSensor_L2
   m_TagString: Untagged
@@ -666,18 +626,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.1}
   serializedVersion: 2
   m_Radius: 0.05
---- !u!114 &2840909125099351987
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4294630252647326070}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f2a8bdc7f41b704693ad497097f30dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6295684392518699881
 GameObject:
   m_ObjectHideFlags: 0
@@ -853,11 +801,11 @@ MonoBehaviour:
   strength:
     baseValue: 0
     modifiers: 
-  damage:
-    baseValue: 5
-    modifiers: 
   maxHealth:
     baseValue: 100
+    modifiers: 
+  damage:
+    baseValue: 10
     modifiers: 
   currentHealth: 0
   player: {fileID: 6927931599210226085}
@@ -1065,7 +1013,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5931155127555062217}
   - component: {fileID: 5186601131285716563}
-  - component: {fileID: 7646446125771024134}
   m_Layer: 6
   m_Name: WallSensor_R1
   m_TagString: Untagged
@@ -1123,15 +1070,3 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.1}
   serializedVersion: 2
   m_Radius: 0.05
---- !u!114 &7646446125771024134
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8987437492312741907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f2a8bdc7f41b704693ad497097f30dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

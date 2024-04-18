@@ -506,13 +506,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   strength:
-    baseValue: 10
+    baseValue: 15
     modifiers: 
   maxHealth:
-    baseValue: 20
+    baseValue: 15
     modifiers: 
   damage:
-    baseValue: 10
+    baseValue: 5
     modifiers: 
   currentHealth: 0
   enemy: {fileID: 1906559532415322237}

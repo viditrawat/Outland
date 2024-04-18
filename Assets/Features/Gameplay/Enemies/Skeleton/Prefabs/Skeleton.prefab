@@ -106,7 +106,15 @@ PrefabInstance:
       objectReference: {fileID: 250670614392331955}
     - target: {fileID: 7542285070581221386, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
       propertyPath: damage.baseValue
-      value: 20
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7542285070581221386, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
+      propertyPath: strength.baseValue
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7542285070581221386, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
+      propertyPath: maxHealth.baseValue
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7542954700277225877, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
       propertyPath: m_Controller
