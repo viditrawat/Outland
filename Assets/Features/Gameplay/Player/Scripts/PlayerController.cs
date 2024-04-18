@@ -30,6 +30,10 @@ public class PlayerController : Entity
 
     #endregion
 
+    #region [========== Events ===========]
+    public Action playerDied;
+    #endregion
+
     #region [======== States =========]
     public PlayerStateMachine stateMachine {  get; private set; }
     public PlayerIdleState idleState { get; private set; }
@@ -78,6 +82,8 @@ public class PlayerController : Entity
 
     #endregion
 
+    
+
     public void Animationtrigger() => stateMachine.currentState.AnimationFinishtrigger();
 
     #region [ ======== Overrides =========]
@@ -94,6 +100,9 @@ public class PlayerController : Entity
     {
         base.Die();
         stateMachine.ChangeState(deathState);
+        playerDied?.Invoke();
+
+
     }
     #endregion
 

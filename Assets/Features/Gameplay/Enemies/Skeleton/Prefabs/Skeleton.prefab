@@ -38,7 +38,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2566365854443443711, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
       propertyPath: m_Name
-      value: Skeleton Variant
+      value: Skeleton
       objectReference: {fileID: 0}
     - target: {fileID: 3539648251559991327, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
       propertyPath: entity
@@ -104,6 +104,10 @@ PrefabInstance:
       propertyPath: enemy
       value: 
       objectReference: {fileID: 250670614392331955}
+    - target: {fileID: 7542285070581221386, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
+      propertyPath: damage.baseValue
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7542954700277225877, guid: 51e45d0a199eb694c86cbf664fc8c592, type: 3}
       propertyPath: m_Controller
       value: 
