@@ -12,6 +12,7 @@ public class LevelController : MonoBehaviour
 
         if (other.gameObject.GetComponent<PlayerController>() != null)
         {
+            LevelManager.Instance.MarkCurrentLevelComplete();
             UiManager.instance.OpenScene(levelName);
         }
     }
